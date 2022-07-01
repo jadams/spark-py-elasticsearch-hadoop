@@ -1,7 +1,7 @@
 FROM gcr.io/spark-operator/spark-py:v2.4.5
 USER root
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update \
+RUN apt-get update --allow-releaseinfo-change \
     && apt-get install -y nfs-common \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
